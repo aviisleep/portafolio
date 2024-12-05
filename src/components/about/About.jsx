@@ -37,14 +37,14 @@ const about = () => {
             <article className="about__card">
               <VscFolderLibrary className="about__icon" />
               <h5>Projects</h5>
-              <small>3+ Complete</small>
+              <small>50+ Complete</small>
             </article>
           </div>
 
           <p>
             I am an active person looking for new knowledge. I have 9 years of
             experience in the labor field as a graphic designer. I currently
-            have more than 1 years specializing as a Full Stack developer,
+            have more than 3 years specializing as a Full Stack developer,
             handling HTML, CSS, Javascript, React. and improving every day
             learning.
           </p>
