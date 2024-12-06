@@ -9,8 +9,9 @@ const Experience = () => {
       <h2> My Experience</h2>
 
       <div className="container experience__container">
+        {/* Frontend Skills */}
         <div className="experience__frontend">
-          <h3>Fronted Develoment</h3>
+          <h3>Frontend Development</h3>
           <div className="experience__content">
             <article className="experience__details">
               <BsPatchCheckFill />
@@ -29,14 +30,21 @@ const Experience = () => {
             <article className="experience__details">
               <BsPatchCheckFill />
               <div>
-                <h4>JavaScrit</h4>
+                <h4>JavaScript</h4>
               </div>
             </article>
 
             <article className="experience__details">
               <BsPatchCheckFill />
               <div>
-                <h4>REACT</h4>
+                <h4>React</h4>
+              </div>
+            </article>
+
+            <article className="experience__details">
+              <BsPatchCheckFill />
+              <div>
+                <h4>Redux</h4>
               </div>
             </article>
 
@@ -46,18 +54,24 @@ const Experience = () => {
                 <h4>Bootstrap</h4>
               </div>
             </article>
+
+            <article className="experience__details">
+              <BsPatchCheckFill />
+              <div>
+                <h4>Tailwind CSS</h4>
+              </div>
+            </article>
           </div>
         </div>
 
-        {/* end of fronted */}
-
+        {/* Backend Skills */}
         <div className="experience__backend">
-          <h3>Backend Develoment</h3>
+          <h3>Backend Development</h3>
           <div className="experience__content">
             <article className="experience__details">
               <BsPatchCheckFill />
               <div>
-                <h4>Node JS</h4>
+                <h4>Node.js</h4>
               </div>
             </article>
 
@@ -78,7 +92,14 @@ const Experience = () => {
             <article className="experience__details">
               <BsPatchCheckFill />
               <div>
-                <h4>Posgrest</h4>
+                <h4>PostgreSQL</h4>
+              </div>
+            </article>
+
+            <article className="experience__details">
+              <BsPatchCheckFill />
+              <div>
+                <h4>API Development</h4>
               </div>
             </article>
 

@@ -1,74 +1,151 @@
-.services__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
-
-.service {
-  background: var(--color-bg-variant);
-  border-radius: 0 0 2rem 2rem;
-  border: 1px solid var(--color-primary);
-  height: fit-content;
-  transition: var(--transition);
-}
-
-.service:hover {
-  background: transparent;
-  border-color: var(--color-primary-variant);
-  cursor: default;
-}
-
-.service__head {
-  background: var(--color-primary);
-  padding: 2rem;
-  border-radius: 0 0 2rem 2rem;
-  box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-.service__head h3 {
-  color: var(--color-bg);
-  font-size: 1rem;
+/* Diseño de la sección de Servicios */
+#services {
+  padding: 5rem 0;
+  background: var(--color-bg);
   text-align: center;
 }
 
-.service__list {
+#services h5 {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  text-transform: uppercase;
+}
+
+#services h2 {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 3rem;
+}
+
+.services__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Tarjetas de servicios */
+.service {
+  background: var(--color-bg-variant);
+  border-radius: 10px;
   padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.service:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service__head h3 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service__list {
+  list-style: none;
+  padding: 0;
 }
 
 .service__list li {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .service__list-icon {
   color: var(--color-primary);
-  margin-top: 2px;
+  margin-right: 0.5rem;
 }
 
 .service__list p {
-  font-size: 1rem 0 1.5rem;
+  font-size: 1rem;
+  color: var(--color-light);
 }
 
-/*       ===================medium devices===================           */
-
-@media screen and (max-width: 1024px) {
-  .services__container {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    width: 80%;
-  }
-  .service {
-    height: auto;
-  }
+/* ===================Consultas=================== */
+.service__consultation {
+  margin-top: 30px;
+  text-align: center;
 }
 
-/*       ===================small devices===================           */
+.service__consultation h4 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
 
-@media screen and (max-width: 600px) {
-  .services__container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    width: 90% !important;
-  }
+.service__consultation p {
+  color: var(--color-light);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.service__consultation .btn-primary {
+  background-color: var(--color-primary);
+  padding: 0.8rem 2rem;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.service__consultation .btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ===================FAQ=================== */
+.service__faq {
+  margin-top: 20px;
+}
+
+.service__faq h4 {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+}
+
+.faq-item p {
+  color: var(--color-light);
+  font-size: 1rem;
+}
+
+/* ===================CTA Banner=================== */
+.cta-banner {
+  background: var(--color-primary);
+  color: white;
+  padding: 3rem 2rem;
+  margin-top: 3rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.cta-banner h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta-banner p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-banner .btn-primary {
+  padding: 1rem 2.5rem;
+  background: white;
+  color: var(--color-primary);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.cta-banner .btn-primary:hover {
+  background: var(--color-light);
 }

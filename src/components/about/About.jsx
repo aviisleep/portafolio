@@ -2,10 +2,9 @@ import React from "react";
 import "./about.css";
 import ME from "../../assests/avii-about.jpg";
 import { FaAward } from "react-icons/fa";
-// import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
 
-const about = () => {
+const About = () => {
   return (
     <section id="about">
       <h5>Get To Know</h5>
@@ -14,7 +13,7 @@ const about = () => {
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={ME} alt="Avii Sleep" />
+            <img src={ME} alt="Javier Moreno" />
           </div>
         </div>
 
@@ -24,34 +23,34 @@ const about = () => {
               <FaAward className="about__icon" />
               <h5>Experience</h5>
               <small>
-                10+ Years Graphic Design <br />
-                <span>Fronted Developer 3+ years</span>
+                10+ Years in Graphic Design <br />
+                <span>3+ Years as Full Stack Developer</span>
               </small>
             </article>
-
-            {/* <article className='about__card'>
-              <FiUsers className='about__icon'/>
-              <h5>Clients</h5>
-              <small>200+ Wordwide</small>
-            </article> */}
 
             <article className="about__card">
               <VscFolderLibrary className="about__icon" />
               <h5>Projects</h5>
-              <small>50+ Complete</small>
+              <small>50+ Completed Projects</small>
             </article>
           </div>
 
           <p>
-            I am an active person looking for new knowledge. I have 9 years of
-            experience in the labor field as a graphic designer. I currently
-            have more than 3 years specializing as a Full Stack developer,
-            handling HTML, CSS, Javascript, React. and improving every day
-            learning.
+            I am a proactive and passionate professional dedicated to continuous
+            learning and growth. With over{" "}
+            <strong>10 years of experience</strong> in graphic design,
+            specializing in printed advertising, I have honed my creativity and
+            attention to detail.
+            <br />
+            <br />
+            In addition, I have over <strong>3 years of experience</strong> as a
+            Full Stack Developer, focusing on creating dynamic, responsive, and
+            user-friendly websites. My expertise includes HTML, CSS, JavaScript,
+            React, Node.js, Express, MySQL, PostgreSQL, MongoDB, and API
+            integration. I am always eager to learn and improve every day.
           </p>
 
           <a href="#contacts" className="btn btn-primary">
-            {" "}
             Let's Talk
           </a>
         </div>
@@ -60,4 +59,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
