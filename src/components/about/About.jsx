@@ -36,18 +36,20 @@ const About = () => {
           </div>
 
           <p>
-            I am a proactive and passionate professional dedicated to continuous
-            learning and growth. With over{" "}
+            I am a proactive and passionate professional committed to continuous
+            learning and personal growth. With over{" "}
             <strong>10 years of experience</strong> in graphic design,
-            specializing in printed advertising, I have honed my creativity and
-            attention to detail.
+            particularly in printed advertising, I have refined my creativity
+            and sharpened my attention to detail.
             <br />
             <br />
-            In addition, I have over <strong>3 years of experience</strong> as a
-            Full Stack Developer, focusing on creating dynamic, responsive, and
-            user-friendly websites. My expertise includes HTML, CSS, JavaScript,
-            React, Node.js, Express, MySQL, PostgreSQL, MongoDB, and API
-            integration. I am always eager to learn and improve every day.
+            Additionally, I bring over{" "}
+            <strong>three years of experience</strong> as a Full Stack
+            Developer, specializing in the creation of dynamic, responsive, and
+            user- friendly websites. My technical expertise includes HTML, CSS,
+            JavaScript, React, Node.js, Express, MySQL, PostgreSQL, MongoDB, and
+            API integration. I am consistently eager to learn and enhance my
+            skills every day.
           </p>
 
           <a href="#contacts" className="btn btn-primary">

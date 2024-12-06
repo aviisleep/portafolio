@@ -23,7 +23,6 @@
   gap: 2rem;
 }
 
-/* Tarjetas de servicios */
 .service {
   background: var(--color-bg-variant);
   border-radius: 10px;
@@ -64,88 +63,58 @@
   color: var(--color-light);
 }
 
-/* ===================Consultas=================== */
-.service__consultation {
-  margin-top: 30px;
-  text-align: center;
+.service__additional-info {
+  margin-top: 1rem;
 }
 
-.service__consultation h4 {
-  color: var(--color-primary);
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
+/* Estilos para el contenedor adicional de información */
+.service__additional-info {
+  margin-top: 2rem; /* Asegura que haya espacio entre el contenido de la lista y el botón */
 }
 
-.service__consultation p {
-  color: var(--color-light);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
-
+/* Estilos para el botón Request Consultation */
 .service__consultation .btn-primary {
-  background-color: var(--color-primary);
-  padding: 0.8rem 2rem;
-  color: white;
-  border: none;
-  font-size: 1rem;
-  border-radius: 5px;
+  margin-top: 1rem; /* Añade un poco de margen arriba del botón para separar el texto */
+  padding: 1rem 2rem; /* Aumenta el padding para hacerlo más grande y darle más espacio al texto */
+  font-size: 1.1rem; /* Ajusta el tamaño del texto si es necesario */
+  width: 100%; /* Hace que el botón ocupe el 100% del ancho disponible, para mejor visibilidad */
+  background-color: var(
+    --color-primary
+  ); /* Establece el color de fondo del botón */
+  color: #fff; /* Asegura que el texto del botón sea blanco */
+  border-radius: 5px; /* Da un borde redondeado */
+  text-align: center; /* Asegura que el texto esté centrado */
+  display: block; /* Asegura que el botón sea un bloque, lo que facilita la visualización */
+}
+
+/* Mostrar/Ocultar Información */
+.service__faq-toggle {
+  margin-top: 1rem; /* Espacio entre el botón y el enlace "View FAQ" */
   cursor: pointer;
-}
-
-.service__consultation .btn-primary:hover {
-  background-color: var(--color-primary-dark);
-}
-
-/* ===================FAQ=================== */
-.service__faq {
-  margin-top: 20px;
-}
-
-.service__faq h4 {
   color: var(--color-primary);
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  display: block; /* Hace que el texto de "View FAQ" ocupe todo el ancho disponible */
 }
 
-.faq-item {
-  margin-bottom: 1rem;
-}
-
-.faq-item p {
-  color: var(--color-light);
-  font-size: 1rem;
-}
-
-/* ===================CTA Banner=================== */
-.cta-banner {
-  background: var(--color-primary);
-  color: white;
-  padding: 3rem 2rem;
-  margin-top: 3rem;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.cta-banner h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.cta-banner p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.cta-banner .btn-primary {
-  padding: 1rem 2.5rem;
-  background: white;
-  color: var(--color-primary);
-  border: none;
+.service__faq-content {
+  margin-top: 1rem; /* Separación adicional entre el botón y el contenido FAQ */
+  padding: 1rem;
+  background-color: var(--color-light);
   border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
 }
 
-.cta-banner .btn-primary:hover {
-  background: var(--color-light);
+/* ===================Medium Devices=================== */
+@media screen and (max-width: 1024px) {
+  .services__container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===================Small Devices=================== */
+@media screen and (max-width: 600px) {
+  .services__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }

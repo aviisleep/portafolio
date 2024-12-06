@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { BiCheck } from "react-icons/bi";
 import "./services.css";
 
 const Services = () => {
+  const [showFAQ, setShowFAQ] = useState({
+    graphicDesign: false,
+    webDevelopment: false,
+    fullStack: false,
+  });
+
+  // Función para alternar la visibilidad de las FAQ
+  const toggleFAQ = (service) => {
+    setShowFAQ((prevState) => ({
+      ...prevState,
+      [service]: !prevState[service],
+    }));
+  };
+
   // Función para generar el enlace de WhatsApp con mensaje personalizado
   const generateWhatsAppLink = (service) => {
     const baseURL = "https://wa.me/573028687107?text=";
@@ -62,10 +76,6 @@ const Services = () => {
           <div className="service__additional-info">
             <div className="service__consultation">
               <h4>Free Consultation</h4>
-              <p>
-                Contact me for a free consultation and get personalized advice
-                for your project.
-              </p>
               <a
                 href={generateWhatsAppLink("Graphic Design")}
                 className="btn-primary"
@@ -74,23 +84,26 @@ const Services = () => {
               >
                 Request Consultation
               </a>
-            </div>
-            <div className="service__faq">
-              <h4>Frequently Asked Questions</h4>
-              <div className="faq-item">
-                <p>How long does a logo design take?</p>
-                <p>
-                  It takes approximately 1-2 weeks depending on the complexity
-                  of the design.
-                </p>
-              </div>
-              <div className="faq-item">
-                <p>What do I need to get started?</p>
-                <p>
-                  Just your ideas! We'll work together to bring your vision to
-                  life.
-                </p>
-              </div>
+              <p
+                onClick={() => toggleFAQ("graphicDesign")}
+                className="service__faq-toggle"
+              >
+                {showFAQ.graphicDesign ? "Hide FAQ" : "View FAQ"}
+              </p>
+              {showFAQ.graphicDesign && (
+                <div className="service__faq-content">
+                  <p>How long does a logo design take?</p>
+                  <p>
+                    It takes approximately 1-2 weeks depending on the complexity
+                    of the design.
+                  </p>
+                  <p>What do I need to get started?</p>
+                  <p>
+                    Just your ideas! We'll work together to bring your vision to
+                    life.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </article>
@@ -127,10 +140,6 @@ const Services = () => {
           <div className="service__additional-info">
             <div className="service__consultation">
               <h4>Free Consultation</h4>
-              <p>
-                Contact me for a free consultation and get personalized advice
-                for your project.
-              </p>
               <a
                 href={generateWhatsAppLink("Web Development")}
                 className="btn-primary"
@@ -139,17 +148,20 @@ const Services = () => {
               >
                 Request Consultation
               </a>
-            </div>
-            <div className="service__faq">
-              <h4>Frequently Asked Questions</h4>
-              <div className="faq-item">
-                <p>How long does a web development project take?</p>
-                <p>It depends on the complexity, but typically 2-6 weeks.</p>
-              </div>
-              <div className="faq-item">
-                <p>Do you provide ongoing support after the project?</p>
-                <p>Yes, I offer ongoing support and maintenance packages.</p>
-              </div>
+              <p
+                onClick={() => toggleFAQ("webDevelopment")}
+                className="service__faq-toggle"
+              >
+                {showFAQ.webDevelopment ? "Hide FAQ" : "View FAQ"}
+              </p>
+              {showFAQ.webDevelopment && (
+                <div className="service__faq-content">
+                  <p>How long does a web development project take?</p>
+                  <p>It depends on the complexity, but typically 2-6 weeks.</p>
+                  <p>Do you provide ongoing support after the project?</p>
+                  <p>Yes, I offer ongoing support and maintenance packages.</p>
+                </div>
+              )}
             </div>
           </div>
         </article>
@@ -171,21 +183,17 @@ const Services = () => {
             </li>
             <li>
               <BiCheck className="service__list-icon" />
-              <p>Live Courses</p>
+              <p>Node.js Back-end Development</p>
             </li>
             <li>
               <BiCheck className="service__list-icon" />
-              <p>E-commerce</p>
+              <p>Database Integration</p>
             </li>
           </ul>
 
           <div className="service__additional-info">
             <div className="service__consultation">
               <h4>Free Consultation</h4>
-              <p>
-                Contact me for a free consultation and get personalized advice
-                for your project.
-              </p>
               <a
                 href={generateWhatsAppLink("Full Stack Development")}
                 className="btn-primary"
@@ -194,42 +202,28 @@ const Services = () => {
               >
                 Request Consultation
               </a>
-            </div>
-            <div className="service__faq">
-              <h4>Frequently Asked Questions</h4>
-              <div className="faq-item">
-                <p>What is included in Full Stack development?</p>
-                <p>
-                  It includes front-end and back-end development, as well as
-                  integration with databases.
-                </p>
-              </div>
-              <div className="faq-item">
-                <p>Do you offer code reviews?</p>
-                <p>
-                  Yes, I offer code reviews and debugging services as part of
-                  ongoing support.
-                </p>
-              </div>
+              <p
+                onClick={() => toggleFAQ("fullStack")}
+                className="service__faq-toggle"
+              >
+                {showFAQ.fullStack ? "Hide FAQ" : "View FAQ"}
+              </p>
+              {showFAQ.fullStack && (
+                <div className="service__faq-content">
+                  <p>Do you work with custom-built backend solutions?</p>
+                  <p>
+                    Yes, I build custom backends tailored to your project's
+                    needs.
+                  </p>
+                  <p>
+                    What technologies do you use for full-stack development?
+                  </p>
+                  <p>React, Node.js, Express, and MongoDB.</p>
+                </div>
+              )}
             </div>
           </div>
         </article>
-      </div>
-
-      <div className="cta-banner">
-        <h3>Ready to start your project?</h3>
-        <p>
-          Let me help you build your vision. Contact me today and let's make it
-          happen.
-        </p>
-        <a
-          href="https://wa.me/573028687107?text=Hello,%20I%20would%20like%20to%20discuss%20starting%20a%20project."
-          className="btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Start Your Project
-        </a>
       </div>
     </section>
   );

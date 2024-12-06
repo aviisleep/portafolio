@@ -1,44 +1,51 @@
+/* Contenedor principal */
 .experience__container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Dos columnas por defecto */
   gap: 2rem;
+  justify-items: center; /* Centra los contenedores dentro de la cuadrícula */
 }
 
+/* Estilo para cada categoría dentro del contenedor */
 .experience__container > div {
   background: var(--color-bg-variant);
-  padding: 2.4rem 3rem; /* Ajusté padding para más consistencia */
+  padding: 2.4rem 3rem;
   border-radius: 2rem;
   border: 1px solid transparent;
-  transition: all 0.3s ease; /* Transición más suave */
+  transition: all 0.3s ease;
+  text-align: center; /* Centra el texto */
 }
 
 .experience__container > div:hover {
   background: transparent;
   border-color: var(--color-primary-variant);
-  cursor: pointer; /* Cambié 'default' por 'pointer' para indicar clickeabilidad */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Agregué sombra para darle un toque interactivo */
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Títulos de las categorías */
 .experience__container > div h3 {
-  text-align: center;
   margin-bottom: 2rem;
   color: var(--color-primary);
-  font-size: 1.5rem; /* Aumenté el tamaño de la fuente */
+  font-size: 1.5rem;
   font-weight: 600;
 }
 
+/* Contenido dentro de las categorías (la lista de habilidades) */
 .experience__content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
   row-gap: 2rem;
-  gap: 1rem; /* Ajusté gap para mayor separación entre los elementos */
+  gap: 1rem;
+  justify-items: center; /* Centra los items dentro de la cuadrícula */
 }
 
+/* Detalles de cada habilidad */
 .experience__details {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 1rem; /* Ajusté el tamaño de la fuente para un mejor ajuste */
+  font-size: 1rem;
 }
 
 .experience__details-icon {
@@ -48,22 +55,23 @@
 
 .experience__details h4 {
   color: var(--color-light);
-  font-weight: 500; /* Mejor visibilidad y contraste */
+  font-weight: 500;
 }
 
+/* Estilo para los íconos */
 .experience__details svg {
   font-size: 1.5rem;
 }
 
-/* ===================Medium Devices=================== */
+/* ===================Medium Devices (Tablets y pantallas medianas)=================== */
 @media screen and (max-width: 1024px) {
   .experience__container {
-    grid-template-columns: 1fr;
-    gap: 2rem; /* Aseguramos que el espaciado se vea bien en pantallas medianas */
+    grid-template-columns: 1fr; /* Una columna en pantallas medianas */
+    gap: 2rem;
   }
 
   .experience__container > div {
-    width: 80%;
+    width: 80%; /* Ancho ajustado para pantallas medianas */
     padding: 2rem;
     margin: 0 auto;
   }
@@ -73,28 +81,28 @@
   }
 }
 
-/* ===================Small Devices=================== */
+/* ===================Small Devices (Móviles)=================== */
 @media screen and (max-width: 600px) {
   .experience__container {
     gap: 1.5rem; /* Aseguramos que el espaciado en pantallas pequeñas sea adecuado */
   }
 
   .experience__container > div {
-    width: 90%;
+    width: 90%; /* Ancho ajustado para móviles */
     padding: 2rem 1rem;
     margin: 0 auto;
   }
 
   .experience__content {
-    grid-template-columns: 1fr; /* En pantallas muy pequeñas, los elementos se apilan */
+    grid-template-columns: 1fr; /* En pantallas pequeñas, los items se apilan */
     gap: 1rem;
   }
 
   .experience__details {
-    font-size: 0.9rem; /* Ajustamos el tamaño de texto en dispositivos pequeños */
+    font-size: 0.9rem; /* Ajuste de tamaño de texto en pantallas pequeñas */
   }
 
   .experience__details svg {
-    font-size: 1.2rem; /* Ajustamos el tamaño de los íconos en pantallas pequeñas */
+    font-size: 1.2rem; /* Ajuste de tamaño de íconos en pantallas pequeñas */
   }
 }
