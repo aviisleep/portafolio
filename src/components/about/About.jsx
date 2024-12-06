@@ -43,13 +43,12 @@ const About = () => {
             and sharpened my attention to detail.
             <br />
             <br />
-            Additionally, I bring over{" "}
-            <strong>three years of experience</strong> as a Full Stack
-            Developer, specializing in the creation of dynamic, responsive, and
-            user- friendly websites. My technical expertise includes HTML, CSS,
-            JavaScript, React, Node.js, Express, MySQL, PostgreSQL, MongoDB, and
-            API integration. I am consistently eager to learn and enhance my
-            skills every day.
+            Additionally, I bring over <strong>3 years of experience</strong> as
+            a Full Stack Developer, specializing in the creation of dynamic,
+            responsive, and user- friendly websites. My technical expertise
+            includes HTML, CSS, JavaScript, React, Node.js, Express, MySQL,
+            PostgreSQL, MongoDB, and API integration. I am consistently eager to
+            learn and enhance my skills every day.
           </p>
 
           <a href="#contacts" className="btn btn-primary">

@@ -5,10 +5,12 @@ const CTA = () => {
     <div className="cta">
       <a
         href={
-          "https://drive.google.com/file/d/1jathu2M25EOgzJB14QQHcIMA8OurNHj4/view?usp=drive_link"
+          "https://drive.google.com/file/d/1CADBPATzZwvWp5QesjitjA14WIFnu9tH/view?usp=sharing"
         }
         download
         className="btn btn-primary"
+        target="_blank"
+        rel="noreferrer"
       >
         Design Portfolio
       </a>
