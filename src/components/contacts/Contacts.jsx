@@ -37,7 +37,7 @@ const Contacts = () => {
             <BsWhatsapp className="contact__option-icon" />
             <h4>Whatsapp</h4>
             <h5>aviisleep@gmail.com</h5>
-            <a rel="noreferrer" href="https://wa.link/3tcwci" target="_blank">
+            <a rel="noreferrer" href="https://wa.link/672xfg" target="_blank">
               Send a message
             </a>
           </article>
