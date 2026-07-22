@@ -36,12 +36,22 @@ export default function Contact() {
             Respondo directo, sin intermediarios. Cuéntame qué necesitas y en
             qué plazo, y te digo si encajo.
           </p>
-          <a
-            href="mailto:aviisleep@gmail.com"
-            className="font-display text-sm text-[#29d3c6] hover:text-[#ffb020] transition-colors"
-          >
-            aviisleep@gmail.com
-          </a>
+          <div className="flex flex-col gap-3">
+            <a
+              href="mailto:aviisleep@gmail.com"
+              className="font-display text-sm text-[#29d3c6] hover:text-[#ffb020] transition-colors"
+            >
+              aviisleep@gmail.com
+            </a>
+            <a
+              href="https://wa.me/573159212000"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 font-display text-xs tracking-wider text-[#0b0d10] bg-[#29d3c6] w-fit px-4 py-2.5 hover:bg-[#edeff2] transition-colors"
+            >
+              WHATSAPP →
+            </a>
+          </div>
         </div>
         <form ref={form} onSubmit={sendEmail} className="space-y-4">
           <input

@@ -1,5 +1,20 @@
 export const projects = [
   {
+    id: "ridestats",
+    year: "2026",
+    status: "En construcción",
+    title: "RideStats",
+    role: "Producto propio · Android",
+    description:
+      "App para repartidores y conductores de plataformas de domicilios y movilidad, nacida de mi propia experiencia repartiendo en Bogotá con Rappi, DiDi, InDrive y Uber.",
+    stack: ["Kotlin", "Jetpack Compose", "Supabase", "Hilt", "Room"],
+    highlights: [
+      "Arquitectura por capas (core/data/domain/ui/features), con Hilt para inyección de dependencias y Room para persistencia local.",
+      "Registro de jornada con StateFlow y ViewModel: inicio, tiempo transcurrido y cierre en tiempo real.",
+    ],
+    links: { github: "https://github.com/aviisleep/ridestats" },
+  },
+  {
     id: "facturacion-saas",
     year: "2025",
     status: "En producción",

@@ -13,6 +13,20 @@
   --font-body: "Inter", sans-serif;
 }
 
+/* Design tokens exposed to Tailwind utilities (bg-ink, text-amber, border-line...)
+   so new chapters can use the same palette as the CSS vars above without
+   re-declaring hex values everywhere. */
+@theme {
+  --color-bg: #0b0d10;
+  --color-surface: #14171c;
+  --color-surface-2: #1b1f26;
+  --color-line: #262b33;
+  --color-ink: #edeff2;
+  --color-ink-muted: #8a919c;
+  --color-amber: #ffb020;
+  --color-cyan: #29d3c6;
+}
+
 * {
   box-sizing: border-box;
 }

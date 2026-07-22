@@ -4,13 +4,16 @@ import Hero3D from "./Hero3D";
 export default function Hero() {
   return (
     <section id="top" className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0">
+      {/* 3D banner lives on its own to the right so it never sits behind the
+          headline — on mobile there isn't room to split, so it stays full
+          width but low in the stack, well behind the fade. */}
+      <div className="absolute inset-y-0 right-0 w-full md:w-3/5 lg:w-1/2 opacity-40 md:opacity-100">
         <Hero3D />
       </div>
 
       {/* vignette */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0b0d10] via-transparent to-[#0b0d10]/40" />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0b0d10]/70 via-transparent to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-full md:w-3/5 bg-gradient-to-r from-[#0b0d10] via-[#0b0d10]/85 to-transparent" />
 
       <div className="relative z-10 h-full max-w-6xl mx-auto px-6 flex flex-col justify-center">
         <motion.p

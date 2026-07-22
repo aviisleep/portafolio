@@ -12,6 +12,9 @@ export default function Footer() {
           <a href="https://linkedin.com/in/aviisleep" target="_blank" rel="noreferrer" className="hover:text-[#29d3c6] transition-colors">
             LINKEDIN
           </a>
+          <a href="https://wa.me/573159212000" target="_blank" rel="noreferrer" className="hover:text-[#29d3c6] transition-colors">
+            WHATSAPP
+          </a>
           <a href="mailto:aviisleep@gmail.com" className="hover:text-[#29d3c6] transition-colors">
             EMAIL
           </a>
