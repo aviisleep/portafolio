@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useTransform } from "framer-motion";
 import StickyScene from "../components/StickyScene";
 import ChapterShell from "../components/ChapterShell";
+import TypewriterText from "../components/TypewriterText";
 import useSceneProgress from "../hooks/useSceneProgress";
 import useStepOpacity from "../hooks/useStepOpacity";
 import useReveal from "../hooks/useReveal";
@@ -13,7 +14,7 @@ function MorphWord({ progress, index, total, word }) {
   const y = useTransform(opacity, [0, 1], [12, 0]);
   return (
     <motion.span
-      style={{ opacity, y }}
+      style={{ opacity, y, transition: "opacity 0.2s ease, transform 0.2s ease" }}
       className="absolute inset-0 flex items-center justify-center font-display text-4xl sm:text-6xl text-ink"
     >
       {word}
@@ -24,23 +25,23 @@ function MorphWord({ progress, index, total, word }) {
 export default function Chapter02Transition() {
   const ref = useRef(null);
   const progress = useSceneProgress(ref);
-  const introReveal = useReveal(progress, [0.08, 0.18]);
-  const footerReveal = useReveal(progress, [0.88, 0.98]);
+  const footerReveal = useReveal(progress, [0.86, 1]);
 
   return (
-    <StickyScene id="transition" dwell="120vh" className="bg-bg" ref={ref}>
+    <StickyScene id="transition" dwell="160vh" className="bg-bg" ref={ref}>
       <ChapterShell
         progress={progress}
         index="02"
         kicker="THE TRANSITION"
         title="Quería entender qué pasaba detrás de la pantalla."
-        eyebrowColor="text-cyan"
+        eyebrowColor="text-accent-cool"
       >
-        <motion.p style={introReveal} className="text-ink-muted leading-relaxed max-w-lg mb-10 text-sm">
-          El diseño me enseñó a componer. La curiosidad por lo que había
-          detrás de una página web fue lo que me llevó a programar — el mismo
-          instinto de construir, aplicado a un material distinto.
-        </motion.p>
+        <TypewriterText
+          progress={progress}
+          range={[0.02, 0.22]}
+          className="text-ink-muted leading-relaxed max-w-lg mb-10 text-sm"
+          text="El diseño me enseñó a componer. La curiosidad por lo que había detrás de una página web fue lo que me llevó a programar — el mismo instinto de construir, aplicado a un material distinto."
+        />
 
         <div className="relative h-24">
           {STEPS.map((word, i) => (
@@ -50,9 +51,11 @@ export default function Chapter02Transition() {
 
         <motion.p
           style={footerReveal}
-          className="font-display text-xs tracking-[0.3em] text-ink-muted text-center mt-10"
+          className="font-headline text-2xl sm:text-4xl text-ink text-center leading-snug mt-10"
         >
-          MISMO INSTINTO, NUEVO MATERIAL
+          El diseño me enseñó a pensar visualmente.
+          <br />
+          El código, a pensar sistemáticamente.
         </motion.p>
       </ChapterShell>
     </StickyScene>

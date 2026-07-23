@@ -62,7 +62,7 @@ export const projects = [
   {
     id: "automotive-workshop",
     year: "2023",
-    status: "Completado",
+    status: "En construcción",
     title: "Automotive Workshop Management System",
     role: "Proyecto freelance",
     description:

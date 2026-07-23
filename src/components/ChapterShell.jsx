@@ -13,12 +13,12 @@ export default function ChapterShell({
   index,
   kicker,
   title,
-  eyebrowColor = "text-amber",
+  eyebrowColor = "text-accent",
   className = "",
   children,
 }) {
-  const kickerReveal = useReveal(progress, [0, 0.08]);
-  const titleReveal = useReveal(progress, [0.03, 0.14], 20);
+  const kickerReveal = useReveal(progress, [0.02, 0.16]);
+  const titleReveal = useReveal(progress, [0.1, 0.3], 24);
 
   return (
     <div className={`max-w-6xl mx-auto px-6 w-full ${className}`}>
@@ -31,7 +31,7 @@ export default function ChapterShell({
       {title && (
         <motion.h2
           style={titleReveal}
-          className="font-display text-xl sm:text-3xl text-ink leading-snug mb-8 max-w-3xl"
+          className="font-headline text-xl sm:text-3xl text-ink leading-snug mb-5 max-w-3xl"
         >
           {title}
         </motion.h2>

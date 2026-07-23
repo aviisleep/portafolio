@@ -4,9 +4,13 @@ import { AnimatePresence, motion } from "framer-motion";
 const links = [
   { href: "#origin", label: "Origin", number: "01" },
   { href: "#transition", label: "The Transition", number: "02" },
-  { href: "#stack", label: "Stack" },
-  { href: "#work", label: "Proyectos" },
-  { href: "#contact", label: "Contacto" },
+  { href: "#code", label: "Code", number: "03" },
+  { href: "#stack", label: "Stack", number: "04" },
+  { href: "#work", label: "Selected Work", number: "05" },
+  { href: "#lab", label: "The Lab", number: "06" },
+  { href: "#github", label: "GitHub", number: "07" },
+  { href: "#now", label: "Now", number: "08" },
+  { href: "#contact", label: "Let's Build", number: "09" },
 ];
 
 export default function Nav() {
@@ -24,7 +28,7 @@ export default function Nav() {
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-bg/70 border-b border-line">
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
           <a href="#top" onClick={() => setOpen(false)} className="font-display text-sm tracking-wider text-ink">
-            JAVIER<span className="text-amber">.</span>MORENO
+            JAVIER<span className="text-accent">.</span>MORENO
           </a>
           <button
             type="button"
@@ -71,9 +75,9 @@ export default function Nav() {
                     className="flex items-baseline gap-4 py-4 sm:py-6 group"
                   >
                     {l.number && (
-                      <span className="font-display text-xs text-amber">{l.number}</span>
+                      <span className="font-display text-xs text-accent">{l.number}</span>
                     )}
-                    <span className="font-display text-3xl sm:text-5xl text-ink group-hover:text-cyan transition-colors">
+                    <span className="font-display text-3xl sm:text-5xl text-ink group-hover:text-accent-cool transition-colors">
                       {l.label}
                     </span>
                   </a>
@@ -88,13 +92,13 @@ export default function Nav() {
               transition={{ duration: 0.4, delay: 0.05 + links.length * 0.06 }}
               className="max-w-6xl mx-auto w-full mt-10 flex flex-wrap gap-6 font-display text-xs tracking-wider text-ink-muted"
             >
-              <a href="mailto:aviisleep@gmail.com" className="hover:text-cyan transition-colors">
+              <a href="mailto:aviisleep@gmail.com" className="hover:text-accent-cool transition-colors">
                 EMAIL
               </a>
-              <a href="https://wa.me/573159212000" target="_blank" rel="noreferrer" className="hover:text-cyan transition-colors">
+              <a href="https://wa.me/573159212000" target="_blank" rel="noreferrer" className="hover:text-accent-cool transition-colors">
                 WHATSAPP
               </a>
-              <a href="https://github.com/aviisleep" target="_blank" rel="noreferrer" className="hover:text-cyan transition-colors">
+              <a href="https://github.com/aviisleep" target="_blank" rel="noreferrer" className="hover:text-accent-cool transition-colors">
                 GITHUB
               </a>
             </motion.div>
