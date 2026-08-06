@@ -9,6 +9,14 @@ import useSceneProgress from "../hooks/useSceneProgress";
  * whatever scene comes next — the same mechanism izanami-official.com
  * uses for its project cards, no scroll-jacking library required.
  *
+ * The sticky element itself carries NO animated style. Safari/WebKit has
+ * a real bug where a `transform` (or animated `opacity`) applied to the
+ * same element that has `position: sticky` breaks the sticking — the
+ * element never pins and just scrolls straight through, which on mobile
+ * showed up as "scrolling down shows nothing but black background" since
+ * the actual content flew past almost instantly. The transform/opacity
+ * live on a plain child `motion.div` instead, which is always safe.
+ *
  * `overlap` pulls this scene's wrapper up into the tail of the previous
  * one (negative margin-top), so there's a real shared scroll range where
  * both are simultaneously on screen. The entrance/exit windows below are
@@ -59,26 +67,18 @@ const StickyScene = forwardRef(function StickyScene(
       ref={ref}
       className="relative"
       style={{
-        // 100dvh (dynamic viewport height), not 100vh — mobile browsers
-        // resize the visible viewport as the address bar shows/hides on
-        // scroll, and plain vh doesn't track that. Mixing the two means
-        // this wrapper's measured height drifts from what `sticky` is
-        // actually pinning against, so the math for "when does this
-        // scene release and the next one take over" goes wrong — on
-        // mobile that showed up as scrolling down landing in the gap
-        // between scenes (blank) until scrolling back up far enough to
-        // land on a scene again.
         height: `calc(100dvh + ${dwell})`,
         marginTop: `calc(-1 * ${overlap})`,
       }}
     >
-      <motion.section
-        id={id}
-        style={transition ? { x, y, opacity, scale } : undefined}
-        className={`sticky top-0 h-[100dvh] w-full overflow-hidden flex items-center ${className}`}
-      >
-        {children}
-      </motion.section>
+      <section id={id} className="sticky top-0 h-[100dvh] w-full overflow-hidden">
+        <motion.div
+          style={transition ? { x, y, opacity, scale } : undefined}
+          className={`w-full h-full flex items-center ${className}`}
+        >
+          {children}
+        </motion.div>
+      </section>
     </div>
   );
 });
