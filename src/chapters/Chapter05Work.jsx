@@ -64,12 +64,12 @@ function CaseCard({ item, index, progress }) {
   const start = 0.03 + index * 0.15;
   const reveal = useReveal(progress, [start, start + 0.16], 24);
   return (
-    <motion.article style={reveal} className="border border-line bg-bg p-3.5">
-      <div className="flex items-baseline justify-between gap-3 mb-2.5">
-        <h3 className="font-headline text-lg sm:text-xl text-ink">{item.title}</h3>
+    <motion.article style={reveal} className="border border-line bg-bg p-2.5 sm:p-3.5">
+      <div className="flex items-baseline justify-between gap-3">
+        <h3 className="font-headline text-base sm:text-xl text-ink">{item.title}</h3>
         <span className="font-display text-[9px] text-ink-muted whitespace-nowrap">{item.meta}</span>
       </div>
-      <dl className="grid sm:grid-cols-2 gap-x-3 gap-y-2">
+      <dl className="hidden sm:grid sm:grid-cols-2 gap-x-3 gap-y-2 mt-2.5">
         {item.fields.map((f) => (
           <div key={f.label}>
             <dt className="font-display text-[9px] tracking-[0.15em] text-accent-cool mb-0.5">{f.label}</dt>
@@ -81,7 +81,7 @@ function CaseCard({ item, index, progress }) {
         href={item.link.href}
         target="_blank"
         rel="noreferrer"
-        className="inline-block mt-2.5 font-display text-[9px] tracking-wider text-ink hover:text-accent transition-colors"
+        className="inline-block mt-1.5 sm:mt-2.5 font-display text-[9px] tracking-wider text-ink hover:text-accent transition-colors"
       >
         {item.link.label}
       </a>

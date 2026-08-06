@@ -74,7 +74,7 @@ const StickyScene = forwardRef(function StickyScene(
       <section id={id} className="sticky top-0 h-[100dvh] w-full overflow-hidden">
         <motion.div
           style={transition ? { x, y, opacity, scale } : undefined}
-          className={`w-full h-full flex items-center ${className}`}
+          className={`w-full h-full flex items-center pt-20 pb-6 ${className}`}
         >
           {children}
         </motion.div>
