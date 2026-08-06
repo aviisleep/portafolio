@@ -7,7 +7,7 @@ export default function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.6 }}
       transition={{ duration: 0.6 }}
-      style={{ marginTop: "-100vh" }}
+      style={{ marginTop: "-100dvh" }}
       className="relative border-t border-line bg-bg"
     >
       <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row justify-between items-center gap-4">

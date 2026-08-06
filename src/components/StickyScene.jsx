@@ -4,8 +4,8 @@ import useSceneProgress from "../hooks/useSceneProgress";
 
 /**
  * A "window" of the scroll story. The outer div is taller than the
- * viewport (100vh + dwell); its child section is pinned (`sticky top-0
- * h-screen`) for that extra height, then releases and gets covered by
+ * viewport (100dvh + dwell); its child section is pinned (`sticky top-0
+ * h-[100dvh]`) for that extra height, then releases and gets covered by
  * whatever scene comes next — the same mechanism izanami-official.com
  * uses for its project cards, no scroll-jacking library required.
  *
@@ -59,14 +59,23 @@ const StickyScene = forwardRef(function StickyScene(
       ref={ref}
       className="relative"
       style={{
-        height: `calc(100vh + ${dwell})`,
+        // 100dvh (dynamic viewport height), not 100vh — mobile browsers
+        // resize the visible viewport as the address bar shows/hides on
+        // scroll, and plain vh doesn't track that. Mixing the two means
+        // this wrapper's measured height drifts from what `sticky` is
+        // actually pinning against, so the math for "when does this
+        // scene release and the next one take over" goes wrong — on
+        // mobile that showed up as scrolling down landing in the gap
+        // between scenes (blank) until scrolling back up far enough to
+        // land on a scene again.
+        height: `calc(100dvh + ${dwell})`,
         marginTop: `calc(-1 * ${overlap})`,
       }}
     >
       <motion.section
         id={id}
         style={transition ? { x, y, opacity, scale } : undefined}
-        className={`sticky top-0 h-screen w-full overflow-hidden flex items-center ${className}`}
+        className={`sticky top-0 h-[100dvh] w-full overflow-hidden flex items-center ${className}`}
       >
         {children}
       </motion.section>
